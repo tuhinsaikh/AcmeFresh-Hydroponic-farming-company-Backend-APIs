@@ -10,7 +10,11 @@ This project required building a website for a hypothetical, state-of-the-art Hy
 4. Selling produce directly to customers(B2C) from its website.
 
 It has been built using Java, Spring, SpringBoot, MySQL and Hibernate. There are 5 model classes in the project Products, Service, Seller, Customer and Order. The main goal of this project is to create a series of backend APIs so that the user can access the functionalities of the various types of functions from the website.
+
 It is an individual project to complete within 24 hours. I have tried to add as much functionality as possible.
+
+This project is more focused on the order functionality instead of credentials.
+As multiple products can order in one order also can be changed the quantity while order products. 
 
 Tech Stacks & Tools Used 
 ------------------------
