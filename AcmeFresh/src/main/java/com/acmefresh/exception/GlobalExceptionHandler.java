@@ -32,15 +32,15 @@ public class GlobalExceptionHandler {
 	return new ResponseEntity<MyErrorDetails>(err,HttpStatus.BAD_REQUEST);
 	}
 	
-//	@ExceptionHandler(UserAlreadyExists.class)
-//	public ResponseEntity<MyErrorDetails> myExpHandler(UserAlreadyExists ie,WebRequest wr) {
-//	System.out.println("inside UserAlreadyExists method...");
-//	MyErrorDetails err=new MyErrorDetails();
-//	err.setTimestamp(LocalDateTime.now());
-//	err.setMessage(ie.getMessage());
-//	err.setDetails(wr.getDescription(false));
-//	return new ResponseEntity<MyErrorDetails>(err,HttpStatus.BAD_REQUEST);
-//	}
+	@ExceptionHandler(UserAlreadyExists.class)
+	public ResponseEntity<MyErrorDetails> myExpHandler(UserAlreadyExists ie,WebRequest wr) {
+	System.out.println("inside UserAlreadyExists method...");
+	MyErrorDetails err=new MyErrorDetails();
+	err.setTimestamp(LocalDateTime.now());
+	err.setMessage(ie.getMessage());
+	err.setDetails(wr.getDescription(false));
+	return new ResponseEntity<MyErrorDetails>(err,HttpStatus.BAD_REQUEST);
+	}
 	
 	
 	@ExceptionHandler(Exception.class)

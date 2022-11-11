@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.acmefresh.model.Customer;
-import com.acmefresh.model.Seller;
 import com.acmefresh.service.CustomerService;
 
 @RestController
@@ -22,7 +21,8 @@ public class CustomerController {
 	private CustomerService customerService;
 	
 	@PostMapping("/customer")
-	public ResponseEntity<Customer> registerCustomerController(Customer customer){
+	public ResponseEntity<Customer> registerCustomerController(@RequestBody Customer customer){
+		System.out.println(customer);
 		Customer savedCustomer = customerService.registerCustomer(customer);
 		return new ResponseEntity<Customer>(savedCustomer, HttpStatus.CREATED);
 	}

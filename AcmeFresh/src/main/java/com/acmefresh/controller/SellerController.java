@@ -18,7 +18,7 @@ public class SellerController {
 	private SellerService sellerService;
 	
 	@PostMapping("/seller")
-	public ResponseEntity<Seller> registerCustomerController(Seller seller){
+	public ResponseEntity<Seller> registerCustomerController(@RequestBody Seller seller){
 		Seller savedSeller = sellerService.registerSeller(seller);
 		return new ResponseEntity<Seller>(savedSeller, HttpStatus.CREATED);
 	}
