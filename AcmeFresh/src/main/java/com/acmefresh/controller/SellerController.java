@@ -17,13 +17,13 @@ public class SellerController {
 	@Autowired
 	private SellerService sellerService;
 	
-	@PostMapping("/seller")
+	@PostMapping("seller")
 	public ResponseEntity<Seller> registerCustomerController(@RequestBody Seller seller){
 		Seller savedSeller = sellerService.registerSeller(seller);
 		return new ResponseEntity<Seller>(savedSeller, HttpStatus.CREATED);
 	}
 	
-	@PutMapping("/seller/{sellerId}")
+	@PutMapping("seller/{sellerId}")
 	public ResponseEntity<Seller> updateSellerDetailsController(@RequestBody Seller seller,@PathVariable("sellerId") Integer sellerId){
 		Seller savedSeller = sellerService.updateSellerDetails(seller, sellerId);
 		return new ResponseEntity<Seller>(savedSeller, HttpStatus.ACCEPTED);

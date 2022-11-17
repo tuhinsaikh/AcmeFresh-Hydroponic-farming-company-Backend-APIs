@@ -39,12 +39,13 @@ public class User {
 	private String email;
 	private String password;
 
-	@ManyToMany(fetch = FetchType.LAZY,cascade = {
-	        CascadeType.PERSIST, 
-	        CascadeType.MERGE
-	    })
-	  @JoinTable(name = "user_roles"
-      )
+//	@ManyToMany(fetch = FetchType.LAZY,cascade = {
+//	        CascadeType.PERSIST, 
+//	        CascadeType.MERGE
+//	    })
+	@ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL
+	    )
+	  //@JoinTable(name = "user_roles")
 	private Set<Role> roles = new HashSet<>();
 
 	public User(String username, String email, String password) {
